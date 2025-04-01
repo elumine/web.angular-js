@@ -1,0 +1,13 @@
+<div class="text-input">
+  <div class="header-text">{{ $ctrl.placeholder + ($ctrl.required ? '*' : '') }}</div>
+  <form name="form" novalidate>
+    <input name="input" validator type="{{$ctrl.type}}" ng-model="$ctrl.ngModel" />
+    <div class="error" ng-show="form.input.$touched || form.input.$dirty" >
+      <div ng-show="form.input.$error.whitelist">{{ $ctrl.whitelistErrorMessage }}</div>
+      <div ng-show="form.input.$error.blacklist">{{ $ctrl.blacklistErrorMessage }}</div>
+      <div ng-show="form.input.$error.minLength">Min length is {{ $ctrl.minLength }}</div>
+      <div ng-show="form.input.$error.pattern">{{ $ctrl.regexpErrorMessage }}</div>
+      <div ng-show="form.input.$error.required">Is Required</div>
+    </div>
+  </form>
+</div>

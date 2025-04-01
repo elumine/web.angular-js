@@ -1,0 +1,6 @@
+logs/*
+!.gitkeep
+node_modules/
+app/lib/
+.DS_Store
+.idea

@@ -1,0 +1,62 @@
+<div class="users-view">
+  <div class="success-message">Success</div>
+  <div class="error-message">Error, form is invalid</div>
+  <div class="table-wrapper">
+    <div class="top-row">
+      <button class="create-button" ng-click="$ctrl.onCreateUserClick()">Create User</button>
+    </div>
+    <table class="users-table">
+      <tr class="header-row">
+        <th>USERNAME</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+        <th>TYPE</th>
+      </tr>
+      <tr class="content-row" ng-repeat="user in $ctrl.users" ng-click="$ctrl.selectUser(user)">
+        <td>{{ user.username }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.type }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="form-wrapper" ng-show="$ctrl.formMode > 0">
+    <div class="heading">
+      <span ng-show="$ctrl.formMode == 1">
+        Create new user
+      </span>
+      <span ng-show="$ctrl.formMode == 2">
+        {{ $ctrl.selectedUser.firstName + ' ' + $ctrl.selectedUser.lastName }}
+      </span>
+    </div>
+    <div class="close-button" ng-click="$ctrl.closeForm()">+</div>
+    <div class="form-controls">
+      <text-input type="text" placeholder="Username" ng-model="$ctrl.formData.username" 
+        required="true" blacklist="$ctrl.formUsernameBlacklist"
+        blacklist-error-message="Username must be unique"></text-input>
+      <text-input type="text" placeholder="First Name" ng-model="$ctrl.formData.firstName" 
+        required="true"></text-input>
+      <text-input type="text" placeholder="Last Name" ng-model="$ctrl.formData.lastName" 
+        required="true"></text-input>
+      <text-input type="text" placeholder="Email" ng-model="$ctrl.formData.email" 
+        required="true" regexp="^[^@]+@[^@]+\.[^@]+$" 
+        regexp-error-message="Email is invalid"></text-input>
+      <text-input type="text" placeholder="Type" ng-model="$ctrl.formData.type" 
+        required="true" whitelist="['Admin', 'Driver']" 
+        whitelist-error-message="Only 'Admin' and 'Driver' values are possible"></text-input>
+      <text-input type="password" placeholder="Password" ng-model="$ctrl.formData.password1" 
+        required="true" min-length="8" regexp="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$" 
+        regexp-error-message="Password should have at least 1 number and letter"></text-input>
+      <text-input type="password" placeholder="Repeat Password" ng-model="$ctrl.formData.password2" 
+        required="true" min-length="8" regexp="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$" 
+        regexp-error-message="Password should have at least 1 number and letter"></text-input>
+    </div>
+    <div class="create-button" ng-show="$ctrl.formMode == 1" ng-click="$ctrl.formSubmit()">Create</div>
+    <div class="edit-footer" ng-show="$ctrl.formMode == 2">
+      <div class="delete-button" ng-click="$ctrl.deleteUser()">Delete</div>
+      <div class="edit-button" ng-click="$ctrl.formSubmit()">Edit</div>
+    </div>
+  </div>
+</div>
