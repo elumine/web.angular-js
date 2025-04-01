@@ -5,6 +5,9 @@ angular.
   config(['$routeProvider',
     function config($routeProvider) {
       $routeProvider
+        .when('/', {
+          redirectTo: () => '/users'
+        })
         .when('/users', {
           template: '<users-view></users-view>'
         })

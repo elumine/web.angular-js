@@ -5,18 +5,13 @@ html, body {
   font: normal normal bold 13px/16px Helvetica;
 }
 
-.view-frame {
-  display: flex;
-  justify-content: center;
-}
-
-users-view {
+.users-view {
   position: relative;
-  margin: 100px 0;
+  margin: 100px 0 100px 50px;
   display: inline-block;
 }
 
-users-view .error-message {
+.users-view .error-message {
   position: absolute;
   left: 0;
   top: -25px;
@@ -28,7 +23,7 @@ users-view .error-message {
   box-shadow: 0px 10px 15px #EF7DA05C;
   display: none;
 }
-users-view .success-message {
+.users-view .success-message {
   position: absolute;
   left: 0;
   top: -25px;
@@ -41,16 +36,16 @@ users-view .success-message {
   display: none;
 }
 
-users-view .table-wrapper {
+.users-view .table-wrapper {
   display: inline-block;
   vertical-align: top;
 }
-users-view .top-row {
+.users-view .top-row {
   display: flex;
   flex-direction: row-reverse;
   margin-bottom: 20px;
 }
-users-view .top-row .create-button {
+.users-view .top-row .create-button {
   width: 120px;
   height: 46px;
   background: #2E8FF0;
@@ -61,7 +56,7 @@ users-view .top-row .create-button {
   cursor: pointer;
 }
 
-users-view .users-table {
+.users-view .users-table {
   background: #fff;
   box-shadow: 0px 0px 30px #523F690D;
   padding-bottom: 78px;
@@ -69,26 +64,26 @@ users-view .users-table {
   border-collapse:separate; 
   border-spacing: 0 2px;
 }
-users-view .users-table tr {
+.users-view .users-table tr {
   cursor: pointer;
 }
-users-view .users-table tr th,
-users-view .users-table tr td {
+.users-view .users-table tr th,
+.users-view .users-table tr td {
   padding: 20px 25px;
   text-align: left;
 }
-users-view .users-table tr th {
+.users-view .users-table tr th {
   color: #A4A4B5;
   font-weight: bold;
 }
-users-view .users-table tr td {
+.users-view .users-table tr td {
   color: #3F4254;
 }
-users-view .users-table tr.content-row {
+.users-view .users-table tr.content-row {
   background: #F4F5F8;
 }
 
-users-view .form-wrapper {
+.users-view .form-wrapper {
   position: relative;
   display: inline-block;
   background: #fff;
@@ -96,12 +91,12 @@ users-view .form-wrapper {
   margin: 65px 0 65px 20px;
   vertical-align: top;
 }
-users-view .form-wrapper .heading {
+.users-view .form-wrapper .heading {
   color:#3F4254;
   font-size: 16px;
   margin-bottom: 10px;
 }
-users-view .form-wrapper .close-button {
+.users-view .form-wrapper .close-button {
   position: absolute;
   right: 25px;
   top: 25px;
@@ -112,7 +107,7 @@ users-view .form-wrapper .close-button {
   cursor: pointer;
   font-weight: normal;
 }
-users-view .form-wrapper .create-button {
+.users-view .form-wrapper .create-button {
   text-align: center;
   padding: 15px 25px;
   background: #2E8FF0;
@@ -124,11 +119,11 @@ users-view .form-wrapper .create-button {
   width: 100px;
   margin: 0 auto;
 }
-users-view .form-wrapper .edit-footer {
+.users-view .form-wrapper .edit-footer {
   display: flex;
   justify-content: space-between;
 }
-users-view .form-wrapper .delete-button {
+.users-view .form-wrapper .delete-button {
   text-align: center;
   padding: 15px 25px;
   background: #F44682;
@@ -139,7 +134,7 @@ users-view .form-wrapper .delete-button {
   cursor: pointer;
   width: 100px;
 }
-users-view .form-wrapper .edit-button {
+.users-view .form-wrapper .edit-button {
   text-align: center;
   padding: 15px 25px;
   background: #2E8FF0;

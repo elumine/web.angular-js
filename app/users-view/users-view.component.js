@@ -3,7 +3,7 @@ angular.
   component('usersView', {
     templateUrl: 'users-view/users-view.template.html',
     controller: ['$location', '$route', '$routeParams', 'UsersService', 'MessagesService',
-      function PhoneListController($location, $route, $routeParams, UsersService, MessagesService) {
+      function UsersViewComponent($location, $route, $routeParams, UsersService, MessagesService) {
         this.users = [];
         this.selectedUserId = null;
         this.selectedUser = null;

@@ -16,7 +16,7 @@ angular.
     },
     templateUrl: 'components/text-input/text-input.template.html',
     controller: [
-      function TextInputController() {
+      function TextInputComponent() {
         // console.log(this);
       }
     ]
